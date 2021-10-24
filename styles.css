@@ -1,0 +1,422 @@
+:root {
+  --main: rgb(79, 161, 255);
+  --accent: rgb(0, 119, 255);
+  --text: white;
+}
+
+body {
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(87, 87, 87);
+  line-height: 1.5;
+}
+
+/*** ******************************** ****/
+/***             ANIMATIONS           ****/
+/*** ******************************** ****/
+
+@keyframes append-animate {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes remove-animate {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+/*** ******************************** ****/
+/***               NAV-BAR            ****/
+/*** ******************************** ****/
+
+#navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  left: 0;
+  min-height: 2em;
+  width: 100%;
+  background-color: var(--main);
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 2em;
+  transition: 0.1s color ease-in-out;
+}
+
+.nav-link:hover {
+  color: rgb(70, 74, 82);
+}
+
+.nav-link:last-of-type {
+  margin-right: 0;
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/*** ******************************** ****/
+/***               COUNTER            ****/
+/*** ******************************** ****/
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  font-weight: bold;
+  padding-top: 4em;
+  padding-bottom: 2em;
+  background-color: var(--main);
+  min-height: 40vh;
+  transition: background-color 1s linear;
+}
+
+.counter--circle {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 12rem;
+  line-height: 12rem;
+  border-radius: 50%;
+  border: 0.15em solid rgba(255, 255, 255, 0.26);
+  font-size: 4.5rem;
+  color: white;
+}
+
+.days {
+  font-size: 0.4rem;
+  pointer-events: none;
+}
+
+.circular--chart {
+  max-height: 60vh;
+}
+
+.circle {
+  stroke: #ffffff86;
+  fill: none;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+#info--text {
+  color: rgb(255, 255, 255);
+  margin: auto;
+  text-align: center;
+  font-weight: 400;
+  padding: 1em;
+}
+/*** ******************************** ****/
+/***              BUTTONS             ****/
+/*** ******************************** ****/
+
+.button {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+  background-color: var(--main);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: var(--accent);
+}
+
+.button:active {
+  transition: all 0.01s;
+  transform: scale(95%);
+}
+
+.date--buttons {
+  background-color: var(--main);
+  transition: background-color 1s linear;
+  padding-bottom: 2em;
+}
+
+.date--button {
+  margin: auto;
+  color: var(--main);
+  background-color: white;
+  padding: 0 1em 0 1em;
+  height: 1.2em;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+}
+
+.date--button:last-of-type {
+  margin-top: 0.5em;
+}
+
+.date--button:hover {
+  color: white;
+}
+/*** ******************************** ****/
+/***             DATE CARDS           ****/
+/*** ******************************** ****/
+
+.planned--stay {
+  min-height: 40vh;
+  padding: 1vh 0 1vh 0;
+}
+
+.date {
+  border-left: 1em solid var(--main);
+  border-right: 1em solid white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-basis: 0;
+  padding: 1em;
+  max-width: 80vw;
+  margin: auto;
+  margin-bottom: 2em;
+  font-size: 1.2rem;
+}
+
+#prev--stays {
+  background-color: var(--main);
+  padding-bottom: 1em;
+  transition: background-color 1s linear;
+}
+
+.prev--header {
+  color: white;
+  padding-top: 1em;
+}
+
+.prev {
+  margin-bottom: 0.5em;
+  transform-origin: 50% 0;
+  animation: append-animate 0.3s linear;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-left: 1em solid var(--accent);
+}
+
+.hidden {
+  display: none;
+}
+
+.date--header {
+  text-align: center;
+}
+
+.linebreak {
+  margin-top: 2em;
+  border-top: 0.2em dashed rgb(124, 124, 124);
+}
+
+.date--label--start {
+  align-self: center;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.date--label--end {
+  align-self: center;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.date--calendar {
+  width: 15em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(87, 87, 87);
+  background-color: white;
+  border: none;
+  border-bottom: 0.2em solid var(--main);
+}
+
+.duration {
+  text-align: center;
+  margin-right: 0.1em;
+  padding-left: 1em;
+  flex-basis: 100%;
+}
+
+/*** ******************************** ****/
+/***                ABOUT             ****/
+/*** ******************************** ****/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5em;
+  font-size: 1.3rem;
+  padding-top: 1em;
+}
+
+.about--header {
+  margin: auto;
+  margin-top: 2em;
+}
+
+#disclaimer--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 0.5em;
+  margin-top: 0;
+}
+
+#disclaimer--text {
+  border: 0.2em solid var(--main);
+  padding: 2em;
+  max-width: 80vw;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.external--link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.external--link:hover {
+  filter: brightness(60%);
+}
+
+.external--link:active {
+  filter: brightness(40%);
+}
+
+/*** ******************************** ****/
+/***           MEDIA QUERIES          ****/
+/*** ******************************** ****/
+
+@media (min-width: 900px) {
+  .date {
+    max-width: 50vw;
+    margin: auto;
+  }
+
+  .planned--stay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    margin: auto;
+    max-width: 75vw;
+    margin-top: -100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  #prev--stays {
+    max-width: 70vw;
+    margin: auto;
+  }
+
+  .date--buttons {
+    max-width: 70vw;
+    margin: auto;
+  }
+
+  .prev {
+    margin-bottom: 0.5em;
+  }
+
+  .counter {
+    gap: 0;
+    max-width: 70vw;
+    margin: auto;
+    padding-bottom: 5em;
+  }
+
+  .counter--button {
+    margin-top: 2em;
+  }
+
+  .about {
+    max-width: 70vw;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav-link {
+    margin-right: 10em;
+  }
+
+  .date {
+    max-width: 30vw;
+  }
+
+  .planned--stay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    margin: auto;
+    max-width: 55vw;
+    margin-top: -100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  #prev--stays {
+    max-width: 50vw;
+    margin: auto;
+  }
+
+  .date--buttons {
+    max-width: 50vw;
+    margin: auto;
+  }
+
+  .prev {
+    margin-bottom: 0.5em;
+  }
+
+  .counter {
+    gap: 0;
+    max-width: 50vw;
+    margin: auto;
+    padding-bottom: 5em;
+  }
+
+  .about {
+    max-width: 50vw;
+    margin: auto;
+  }
+}

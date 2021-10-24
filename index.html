@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<head>
+  <!--- -------------------------------------------- --->
+  <!---                  DEPENDENCIES                --->
+  <!--- -------------------------------------------- --->
+  <link rel="stylesheet" href="styles.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Schengen Visa Calculator</title>
+</head>
+<body>
+  <!--- -------------------------------------------- --->
+  <!---                    NAV-BAR                   --->
+  <!--- -------------------------------------------- --->
+
+  <nav id="navbar">
+    <p class="nav-title">Schengen Visa Calculator</p>
+    <div>
+      <a class="nav-link" href="#counter">Top</a>
+      <a class="nav-link" href="#about">About</a>
+    </div>
+  </nav>
+  <main>
+    <!--- -------------------------------------------- --->
+    <!---                    COUNTER                   --->
+    <!--- -------------------------------------------- --->
+    <div class="counter" id="counter">
+      <svg viewBox="0 0 36 36" height="300" class="circular--chart">
+        <path
+          class="circle"
+          id="circle"
+          d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+          fill="none"
+          stroke="#444"
+          ;
+          stroke-width="1"
+          ;
+          stroke-dasharray="0, 100"
+          ;
+        />
+        <text
+          class="days"
+          id="days"
+          x="50%"
+          y="50%"
+          alignment-baseline="middle"
+          text-anchor="middle"
+          fill="white"
+        >
+          0
+        </text>
+      </svg>
+      <h5 id="info--text">
+        Input your planned stay and any previous stays, then press
+        'calculate'
+      </h5>
+    </div>
+
+    <!--- -------------------------------------------- --->
+    <!---                  PLANNED STAY                --->
+    <!--- -------------------------------------------- --->
+    <div class="planned--stay">
+      <h3 class="date--header">Planned stay</h3>
+      <form class="date">
+        <label class="date--label--start">From:</label
+        ><input
+          type="date"
+          class="date--calendar start"
+          name="plan--start"
+          id="plan--start"
+        />
+
+        <label class="date--label--end">To:</label
+        ><input
+          type="date"
+          class="date--calendar end"
+          name="plan--end"
+          id="plan--end"
+        />
+        <span class="duration"
+          >Duration: <span class="duration--count">0 days</span></span
+        >
+      </form>
+      <button
+        type="button"
+        class="button counter--button"
+        id="counter--button"
+      >
+        Calculate
+      </button>
+    </div>
+
+    <!--- -------------------------------------------- --->
+    <!---                PREVIOUS STAYS                --->
+    <!--- -------------------------------------------- --->
+
+    <div id="prev--stays">
+      <h3 class="date--header prev--header">Previous stays</h3>
+      <form class="date prev hidden">
+        <label class="date--label--start">From:</label
+        ><input
+          type="date"
+          class="date--calendar start"
+          name="previous--start"
+        />
+
+        <label class="date--label--end">To:</label
+        ><input
+          type="date"
+          class="date--calendar end"
+          name="previous--end"
+        />
+        <span class="duration"
+          >Duration: <span class="duration--count">0 days</span></span
+        >
+      </form>
+    </div>
+
+    <!--- -------------------------------------------- --->
+    <!---              ADD/REMOVE BUTTONS              --->
+    <!--- -------------------------------------------- --->
+    <div class="date--buttons" id="date--buttons">
+      <button type="button" class="button date--button remove">
+        -
+      </button>
+      <button type="button" class="button date--button add">+</button>
+    </div>
+
+    <!--- -------------------------------------------- --->
+    <!---                    ABOUT                     --->
+    <!--- -------------------------------------------- --->
+    <section class="about" id="about">
+      <h3 class="about--header">About</h3>
+      <h4 class="about--header" id="disclaimer--header">
+        DISCLAIMER
+      </h4>
+      <p class="about--text" id="disclaimer--text">
+        I give no warranty and accept no responsibility or liability
+        for the accuracy or the completeness of the information and
+        materials contained in this website. Under no circumstances
+        will I be held responsible or liable in any way for any
+        claims, damages, losses, expenses, costs or liabilities
+        whatsoever (including, without limitation, any direct or
+        indirect damages for loss of profits, business interruption or
+        loss of information) resulting or arising directly or
+        indirectly from your use of or inability to use this website,
+        or from your reliance on the information and material on this
+        website, even if I have been advised on the possibility of
+        such damages in advance.
+      </p>
+      <br />
+      <p class="about--text">
+        Short-term visitors to the Schengen countries that do not need
+        a visa and holders of multiple-entry visas valid for at least
+        six months and with 90 days of duration of stay are not
+        permitted to spend more than 90 days within 180 days in the
+        territory of the Schengen Area.<sup>1</sup> <br />The first
+        day you enter the Schengen territory is counted as day 1 even
+        if it is just before midnight, while the date you leave is
+        counted as the last day even if you left before sunrise.<sup
+          >2</sup
+        >
+      </p>
+      <p class="about--text">
+        The 180-day period is rolling, meaning that for each day of
+        your planned stay, you must count 180 days back and see if you
+        exceed the 90/180-day rule. <br />This website is designed to
+        make it easier for the frequent traveler to plan stays in the
+        EU/Schengen area (or other zones and countries with similar
+        visa-free rules). By simply inputting the start and end dates
+        for your planned stay, as well as any recent stays, the
+        calculator will check if you exceed the 90/180-day rule at any
+        point during your planned stay.<br />
+        The calculated number of days will be displayed in the top
+        section of this website. If you spend 90% or more of the total
+        available days, the website will turn orange/yellow and issue
+        a warning. If you spend the full 90 days or more, the website
+        will turn red and show the date that you overstay.
+      </p>
+      <p>
+        It is recommended that you do not rely solely on the results
+        of this calculator, and consult the official documentation at
+        <a
+          class="external--link"
+          href="https://www.schengenvisainfo.com/"
+          target="blank"
+          ><i>schengenvisainfo.com</i></a
+        >
+      </p>
+      <p class="about--text">
+        It is also recommended that you try the official Schengen visa
+        calculator, and understand the consequences for overstaying:
+        <br /><sup>1</sup>
+        <a
+          class="external--link"
+          href="https://www.schengenvisainfo.com/visa-calculator/"
+          target="blank"
+          >Schengen visa calculator</a
+        >
+        <br />
+        <sup>2</sup>
+        <a
+          class="external--link"
+          href="https://www.schengenvisainfo.com/consequences-of-overstaying-in-schengen-area/"
+          target="blank"
+          >Consequences of overstaying in Schengen</a
+        >
+      </p>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
