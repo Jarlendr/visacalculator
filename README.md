@@ -35,4 +35,5 @@ some thoughts to try to improve upon it. For example:
 - Being able to remove a specific stay, instead of just the last one on the list.
 - Being able to add a stay at the top, pushing the other stays back (the first will always be the planned stay).
 - Showing how many days you have left for staying.
+- Testing the code
 
