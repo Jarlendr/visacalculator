@@ -68,8 +68,6 @@ const addDateCard = () => {
 
   calendarTemplate.className = 'date prev';
   calendarContainer.appendChild(calendarTemplate);
-
-  // colorPicker(calendarContainer.lastElementChild);
   document
     .getElementById('date--buttons')
     .scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -83,19 +81,6 @@ const removeFadeOut = (el, speed) => {
   setTimeout(function () {
     el.parentNode.removeChild(el);
   }, speed);
-};
-
-// Randomly picks between colours in a colour array 'arr'.
-// Look at :root in styles.css to see or change the colours.
-const colorPicker = (
-  el,
-  arr = ['--aqua', '--yellow', '--purple', '--pink', '--green']
-) => {
-  return (el.style.borderLeft =
-    '1em solid ' +
-    getComputedStyle(document.documentElement).getPropertyValue(
-      arr[Math.floor(Math.random() * arr.length)]
-    ));
 };
 
 // Takes a date event element, checks if both date inputs are valid,

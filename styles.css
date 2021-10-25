@@ -75,12 +75,13 @@ body {
 }
 
 .nav-link:last-of-type {
-  margin-right: 0;
+  margin-right: 0.2em;
 }
 
 .nav-title {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  pointer-events: none;
 }
 
 /*** ******************************** ****/
@@ -133,6 +134,7 @@ body {
   text-align: center;
   font-weight: 400;
   padding: 1em;
+  pointer-events: none;
 }
 /*** ******************************** ****/
 /***              BUTTONS             ****/
@@ -220,6 +222,7 @@ body {
 .prev--header {
   color: white;
   padding-top: 1em;
+  pointer-events: none;
 }
 
 .prev {
@@ -238,6 +241,7 @@ body {
 
 .date--header {
   text-align: center;
+  pointer-events: none;
 }
 
 .linebreak {
@@ -290,6 +294,7 @@ body {
 .about--header {
   margin: auto;
   margin-top: 2em;
+  pointer-events: none;
 }
 
 #disclaimer--header {
