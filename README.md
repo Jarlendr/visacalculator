@@ -34,6 +34,7 @@ some thoughts to try to improve upon it. For example:
 - Try to combine the 'planned stay' and 'previous stays'.
 - Being able to remove a specific stay, instead of just the last one on the list.
 - Being able to add a stay at the top, pushing the other stays back (the first will always be the planned stay).
-- Showing how many days you have left for staying.
-- Testing the code
+- Showing how many days you have left to stay in Schengen.
+- Use a datepicker to make the date selection more fluid.
+- Testing the code.
 
